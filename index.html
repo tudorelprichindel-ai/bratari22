@@ -6,41 +6,56 @@
     <title>Elite Energy - Brățări Hand-crafted</title>
     <style>
         :root { --gold: #c5a059; --dark-bg: #0d0d0d; --text-gold: #e5c100; }
-        body { margin: 0; font-family: serif; background-color: var(--dark-bg); color: #fff; scroll-behavior: smooth; }
-        nav { display: flex; justify-content: center; padding: 20px; background: #000; border-bottom: 1px solid #222; }
+        body { margin: 0; font-family: 'Times New Roman', serif; background-color: var(--dark-bg); color: #fff; scroll-behavior: smooth; }
+        nav { display: flex; justify-content: center; padding: 20px; background: #000; border-bottom: 1px solid #222; position: sticky; top: 0; z-index: 1000; }
         .logo { font-weight: bold; color: var(--text-gold); font-size: 1.5rem; letter-spacing: 3px; }
-        header { text-align: center; padding: 60px 20px; background: #111; }
-        .catalog { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; padding: 20px; }
-        .product-card { background: #1a1a1a; border: 1px solid #333; text-align: center; padding-bottom: 15px; }
-        .product-card img { width: 100%; height: 300px; object-fit: cover; }
-        .btn-gold { background: var(--gold); color: #000; border: none; padding: 15px; width: 80%; cursor: pointer; font-weight: bold; }
+        header { text-align: center; padding: 80px 20px; background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://i.ibb.co/hK7Y7Cj/2636.jpg'); background-size: cover; background-position: center; }
+        .catalog { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; padding: 40px 5%; max-width: 1200px; margin: 0 auto; }
+        .product-card { background: #1a1a1a; border: 1px solid #333; overflow: hidden; transition: 0.4s; text-align: center; }
+        .product-card:hover { border-color: var(--gold); }
+        .product-card img { width: 100%; height: 350px; object-fit: cover; }
+        .p-info { padding: 20px; }
+        .p-price { color: var(--text-gold); font-size: 1.2rem; font-weight: bold; }
+        .description-section { padding: 60px 10%; background: #111; text-align: center; line-height: 1.8; color: #ccc; }
+        .btn-gold { background: var(--gold); color: #000; border: none; padding: 15px 30px; margin-top: 15px; cursor: pointer; font-weight: bold; text-transform: uppercase; }
     </style>
 </head>
 <body>
     <nav><div class="logo">ELITE ENERGY</div></nav>
     <header>
-        <h1>COLECȚIA PREMIUM</h1>
-        <p>Pietre naturale. Design artizanal. Energie pură.</p>
+        <h1 style="letter-spacing: 5px;">COLECȚIA PREMIUM</h1>
+        <p>Echilibru și putere prin cristale naturale.</p>
     </header>
     <main class="catalog">
         <div class="product-card">
-            <img src="https://i.ibb.co/XLYmR90/2637.jpg" alt="Silver Panther">
-            <h3>Silver Panther Clarity</h3>
-            <p>180 RON</p>
-            <button class="btn-gold">DETALII</button>
+            <img src="https://i.ibb.co/XLYmR90/2637.jpg" alt="Silver Panther Clarity">
+            <div class="p-info">
+                <h3>Silver Panther Clarity</h3>
+                <p>Howlit alb și obsidian cu element central Panteră argintie.</p>
+                <div class="p-price">180 RON</div>
+            </div>
         </div>
         <div class="product-card">
             <img src="https://i.ibb.co/hK7Y7Cj/2636.jpg" alt="Royal Amethyst">
-            <h3>Royal Amethyst</h3>
-            <p>165 RON</p>
-            <button class="btn-gold">DETALII</button>
+            <div class="p-info">
+                <h3>Royal Amethyst</h3>
+                <p>Ametist violet profund și cuarț fumuriu pentru echilibru spiritual.</p>
+                <div class="p-price">165 RON</div>
+            </div>
         </div>
         <div class="product-card">
-            <img src="https://i.ibb.co/W2fVfXW/2580.jpg" alt="Guardian Stack">
-            <h3>The Guardian Stack</h3>
-            <p>250 RON</p>
-            <button class="btn-gold">DETALII</button>
+            <img src="https://i.ibb.co/W2fVfXW/2580.jpg" alt="The Guardian Stack">
+            <div class="p-info">
+                <h3>The Guardian Stack</h3>
+                <p>Set triplu din Ochi de Tigru, Lapis Lazuli și Lavă vulcanică.</p>
+                <div class="p-price">250 RON</div>
+            </div>
         </div>
     </main>
+    <section class="description-section">
+        <h2 style="color: var(--gold);">Povestea Brandului</h2>
+        <p>Fiecare piesă Elite Energy este modelată manual cu intenție. Folosim doar pietre naturale autentice, atent selecționate, pentru a crea nu doar un accesoriu, ci un simbol al forței tale interioare.</p>
+        <button class="btn-gold">Contactează-ne pentru comenzi</button>
+    </section>
 </body>
 </html>
