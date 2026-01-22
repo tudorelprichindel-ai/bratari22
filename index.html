@@ -3,71 +3,203 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Elite Energy - Brățări Premium</title>
+    <title>Elite Energy Art - Colecția Premium</title>
     <style>
-        :root { --gold: #c5a059; --bg: #0d0d0d; --gold-t: #e5c100; }
-        body { margin: 0; font-family: serif; background: var(--bg); color: #fff; line-height: 1.6; }
-        nav { text-align: center; padding: 20px; background: #000; border-bottom: 1px solid #222; position: sticky; top: 0; z-index: 100; }
-        .logo { font-weight: bold; color: var(--gold-t); font-size: 1.4rem; letter-spacing: 2px; }
-        header { text-align: center; padding: 60px 20px; background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1611591437281-460bfbe1220a?auto=format&fit=crop&q=80&w=1000'); background-size: cover; background-position: center; }
-        .catalog { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; padding: 20px; max-width: 1200px; margin: 0 auto; }
-        .card { background: #1a1a1a; border: 1px solid #333; text-align: center; padding-bottom: 20px; border-radius: 8px; overflow: hidden; }
-        .card img { width: 100%; height: 320px; object-fit: cover; }
-        .p-title { font-size: 1.2rem; color: var(--gold); margin: 15px 0 5px; }
-        .p-price { color: var(--gold-t); font-size: 1.3rem; font-weight: bold; }
-        .reviews { padding: 40px 20px; background: #111; text-align: center; }
-        .rev-card { background: #000; padding: 20px; margin: 10px auto; max-width: 500px; border-left: 3px solid var(--gold); font-style: italic; text-align: left; }
-        .contact { padding: 40px 20px; text-align: center; }
-        input, textarea { width: 90%; max-width: 400px; padding: 12px; margin: 8px 0; background: #1a1a1a; border: 1px solid #333; color: #fff; border-radius: 4px; }
-        .btn { background: var(--gold); color: #000; border: none; padding: 15px 30px; font-weight: bold; cursor: pointer; text-transform: uppercase; width: 90%; max-width: 425px; border-radius: 4px; }
-        footer { padding: 30px; background: #000; border-top: 1px solid #222; text-align: center; }
-        .social a { color: var(--gold); text-decoration: none; margin: 0 10px; border: 1px solid var(--gold); padding: 8px 15px; display: inline-block; margin-top: 10px; border-radius: 4px; }
+        :root {
+            --gold: #c5a059;
+            --dark: #1a1a1a;
+            --light-bg: #f4f4f4;
+            --white: #ffffff;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            background-color: var(--light-bg);
+            color: #333;
+        }
+
+        /* Header cu imagine de fundal ca în pozele generate */
+        header {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                        url('https://images.unsplash.com/photo-1611591437281-460bfbe1220a?q=80&w=1000');
+            background-size: cover;
+            background-position: center;
+            color: var(--white);
+            text-align: center;
+            padding: 100px 20px;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin: 0;
+            letter-spacing: 4px;
+            color: var(--gold);
+            text-transform: uppercase;
+        }
+
+        header p {
+            font-size: 1.1rem;
+            margin-top: 10px;
+            letter-spacing: 1px;
+        }
+
+        /* Secțiunea Catalog */
+        .section-title {
+            text-align: center;
+            padding: 40px 0 10px;
+            font-size: 1.8rem;
+            background: var(--white);
+            margin: 0;
+        }
+
+        .catalog {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            padding: 20px 5% 60px;
+            background: var(--white);
+        }
+
+        .product-card {
+            background: var(--dark);
+            color: var(--white);
+            border-radius: 8px;
+            overflow: hidden;
+            text-align: center;
+            padding-bottom: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .product-card img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+        }
+
+        .product-card h3 {
+            margin: 15px 0 5px;
+            color: var(--gold);
+            font-size: 1.2rem;
+        }
+
+        .product-card .price {
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        /* Secțiunea Recenzii - Stil curat ca în imagini */
+        .reviews-section {
+            padding: 60px 5%;
+            text-align: center;
+            background: var(--light-bg);
+        }
+
+        .review-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            max-width: 1100px;
+            margin: 30px auto;
+        }
+
+        .review-card {
+            background: var(--dark);
+            color: var(--white);
+            padding: 30px;
+            border-radius: 8px;
+            text-align: left;
+        }
+
+        .stars { color: var(--gold); margin-bottom: 10px; }
+
+        /* Formular Contact */
+        .contact-section {
+            background: var(--dark);
+            color: var(--white);
+            padding: 60px 5%;
+            text-align: center;
+        }
+
+        .contact-container {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 15px;
+            margin: 10px 0;
+            border: none;
+            border-bottom: 1px solid var(--gold);
+            background: transparent;
+            color: white;
+            box-sizing: border-box;
+        }
+
+        .btn-gold {
+            background: var(--gold);
+            color: black;
+            border: none;
+            padding: 15px 40px;
+            width: 100%;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-top: 20px;
+            cursor: pointer;
+        }
+
+        footer {
+            background: #000;
+            padding: 30px;
+            text-align: center;
+            color: #666;
+            font-size: 0.8rem;
+        }
     </style>
 </head>
 <body>
-    <nav><div class="logo">ELITE ENERGY ART</div></nav>
-    <header><h1>COLECȚIA HANDMADE</h1><p>Echilibru și putere prin cristale naturale</p></header>
-    
+
+    <header>
+        <h1>ELITE ENERGY ART</h1>
+        <p>Brățări artizanale din pietre naturale autentice</p>
+    </header>
+
+    <h2 class="section-title">Catalog Produse</h2>
     <main class="catalog">
-        <div class="card">
-            <img src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&q=80&w=600" alt="Silver Panther">
-            <h3 class="p-title">Silver Panther Clarity</h3>
-            <div class="p-price">180 RON</div>
+        <div class="product-card">
+            <img src="https://i.ibb.co/XLYmR90/2637.jpg" alt="Silver Panther">
+            <h3>Silver Panther Clarity</h3>
+            <div class="price">180 RON</div>
         </div>
-        <div class="card">
-            <img src="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&q=80&w=600" alt="Royal Amethyst">
-            <h3 class="p-title">Royal Amethyst Luxe</h3>
-            <div class="p-price">165 RON</div>
+        <div class="product-card">
+            <img src="https://i.ibb.co/hK7Y7Cj/2636.jpg" alt="Royal Amethyst">
+            <h3>Royal Amethyst Luxe</h3>
+            <div class="price">165 RON</div>
         </div>
-        <div class="card">
-            <img src="https://images.unsplash.com/photo-1602810318383-e3c6c313ca61?auto=format&fit=crop&q=80&w=600" alt="Guardian Stack">
-            <h3 class="p-title">The Guardian Stack</h3>
-            <div class="p-price">250 RON</div>
+        <div class="product-card">
+            <img src="https://i.ibb.co/W2fVfXW/2580.jpg" alt="The Guardian Stack">
+            <h3>The Guardian Stack</h3>
+            <div class="price">250 RON</div>
         </div>
     </main>
 
-    <section class="reviews">
-        <h2 style="color: var(--gold);">Recenzii Clienți</h2>
-        <div class="rev-card">"Calitate excepțională, brățara cu panteră este superbă în realitate!" - Elena M.</div>
-        <div class="rev-card">"Energia pietrelor se simte imediat. Recomand cu încredere!" - Andrei V.</div>
-    </section>
-
-    <section class="contact">
-        <h2 style="color: var(--gold);">Comandă Rapidă</h2>
-        <form action="#" method="POST">
-            <input type="text" placeholder="Numele tău" required>
-            <input type="text" placeholder="Telefon" required>
-            <textarea rows="3" placeholder="Model dorit și mărime încheietură..."></textarea>
-            <button class="btn">Trimite Solicitarea</button>
-        </form>
-    </section>
-
-    <footer>
-        <div class="social">
-            <a href="https://wa.me/407XXXXXXXX">WhatsApp</a>
-            <a href="#">Instagram</a>
+    <section class="reviews-section">
+        <h2 style="color: black;">Ce spun clienții noștri</h2>
+        <div class="review-grid">
+            <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <p>"Brățara este superbă, mult mai frumoasă în realitate!"</p>
+                <strong>- Elena M.</strong>
+            </div>
+            <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <p>"Calitate premium și livrare rapidă. Recomand!"</p>
+                <strong>- Marius T.</strong>
+            </div>
         </div>
-        <p style="font-size: 0.8rem; color: #444; margin-top: 20px;">&copy; 2026 Elite Energy Art. Crafted with passion.</p>
-    </footer>
-</body>
-</html>
+    </section>
+
+    <section class="contact-section">
+        <div class="contact-container">
+            <h2 style="color: var(--gold);">PLASEAZĂ O COMANDĂ
