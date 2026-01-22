@@ -5,57 +5,173 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Elite Energy - Brățări Hand-crafted</title>
     <style>
-        :root { --gold: #c5a059; --dark-bg: #0d0d0d; --text-gold: #e5c100; }
-        body { margin: 0; font-family: 'Times New Roman', serif; background-color: var(--dark-bg); color: #fff; scroll-behavior: smooth; }
-        nav { display: flex; justify-content: center; padding: 20px; background: #000; border-bottom: 1px solid #222; position: sticky; top: 0; z-index: 1000; }
+        :root {
+            --gold: #c5a059;
+            --dark-bg: #0d0d0d;
+            --text-gold: #e5c100;
+        }
+
+        body {
+            margin: 0; font-family: 'Times New Roman', serif;
+            background-color: var(--dark-bg); color: #fff;
+            scroll-behavior: smooth;
+        }
+
+        nav {
+            display: flex; justify-content: center; align-items: center;
+            padding: 20px; background: #000; border-bottom: 1px solid #222;
+            position: sticky; top: 0; z-index: 1000;
+        }
         .logo { font-weight: bold; color: var(--text-gold); font-size: 1.5rem; letter-spacing: 3px; }
-        header { text-align: center; padding: 80px 20px; background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://i.ibb.co/hK7Y7Cj/2636.jpg'); background-size: cover; background-position: center; }
-        .catalog { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; padding: 40px 5%; max-width: 1200px; margin: 0 auto; }
-        .product-card { background: #1a1a1a; border: 1px solid #333; overflow: hidden; transition: 0.4s; text-align: center; }
-        .product-card:hover { border-color: var(--gold); }
+
+        header {
+            text-align: center; padding: 100px 20px;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+                        url('https://i.ibb.co/hK7Y7Cj/2636.jpg'); /* Imaginea de fundal a headerului (Ametist) */
+            background-size: cover; background-position: center;
+        }
+
+        .catalog {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px; padding: 40px 5%; max-width: 1200px; margin: 0 auto;
+        }
+        .product-card {
+            background: #1a1a1a; border: 1px solid #333; overflow: hidden;
+            transition: 0.4s; text-align: center;
+        }
         .product-card img { width: 100%; height: 350px; object-fit: cover; }
         .p-info { padding: 20px; }
-        .p-price { color: var(--text-gold); font-size: 1.2rem; font-weight: bold; }
-        .description-section { padding: 60px 10%; background: #111; text-align: center; line-height: 1.8; color: #ccc; }
-        .btn-gold { background: var(--gold); color: #000; border: none; padding: 15px 30px; margin-top: 15px; cursor: pointer; font-weight: bold; text-transform: uppercase; }
+        .p-title { font-size: 1.3rem; color: var(--gold); margin-bottom: 10px; }
+        .p-price { color: var(--text-gold); font-size: 1.4rem; font-weight: bold; }
+
+        /* Sectiune Recenzii */
+        .reviews-section { padding: 60px 5%; background: #111; text-align: center; }
+        .review-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; max-width: 1100px; margin: 30px auto; }
+        .review-card { background: #0d0d0d; padding: 25px; border: 1px solid #222; font-style: italic; }
+        .stars { color: var(--gold); margin-bottom: 10px; }
+
+        /* Sectiune Contact */
+        .contact-section { padding: 60px 5%; background: #000; text-align: center; }
+        .contact-container { max-width: 600px; margin: 0 auto; background: #111; padding: 30px; border: 1px solid var(--gold); }
+        input, textarea { 
+            width: 100%; padding: 15px; margin: 10px 0; background: #000; 
+            border: 1px solid #333; color: #fff; box-sizing: border-box; 
+        }
+        .btn-gold {
+            background: var(--gold); color: #000; border: none; padding: 18px 40px;
+            font-weight: bold; cursor: pointer; text-transform: uppercase; width: 100%;
+        }
+
+        /* Footer Social Media */
+        footer { background: #000; padding: 40px 20px; border-top: 1px solid #222; text-align: center; }
+        .social-links { margin-bottom: 20px; }
+        .social-links a { 
+            color: var(--gold); text-decoration: none; margin: 0 10px; font-size: 1.1rem;
+            border: 1px solid var(--gold); padding: 10px 20px; display: inline-block;
+            transition: background 0.3s, color 0.3s;
+        }
+        .social-links a:hover { background: var(--gold); color: #000; }
+        .whatsapp-btn { background: #25D366 !important; border-color: #25D366 !important; color: white !important; }
     </style>
 </head>
 <body>
-    <nav><div class="logo">ELITE ENERGY</div></nav>
+
+    <nav><div class="logo">ELITE ENERGY ART</div></nav>
+
     <header>
         <h1 style="letter-spacing: 5px;">COLECȚIA PREMIUM</h1>
-        <p>Echilibru și putere prin cristale naturale.</p>
+        <p style="color: #aaa;">Brățări artizanale din pietre naturale autentice.</p>
     </header>
+
     <main class="catalog">
         <div class="product-card">
             <img src="https://i.ibb.co/XLYmR90/2637.jpg" alt="Silver Panther Clarity">
             <div class="p-info">
-                <h3>Silver Panther Clarity</h3>
-                <p>Howlit alb și obsidian cu element central Panteră argintie.</p>
+                <div class="p-title">Silver Panther Clarity</div>
+                <p class="p-desc">Howlit alb și obsidian cu Panteră argintie.</p>
                 <div class="p-price">180 RON</div>
             </div>
         </div>
         <div class="product-card">
             <img src="https://i.ibb.co/hK7Y7Cj/2636.jpg" alt="Royal Amethyst">
             <div class="p-info">
-                <h3>Royal Amethyst</h3>
-                <p>Ametist violet profund și cuarț fumuriu pentru echilibru spiritual.</p>
+                <div class="p-title">Royal Amethyst Luxe</div>
+                <p class="p-desc">Ametist violet profund și cuarț fumuriu.</p>
                 <div class="p-price">165 RON</div>
             </div>
         </div>
         <div class="product-card">
             <img src="https://i.ibb.co/W2fVfXW/2580.jpg" alt="The Guardian Stack">
             <div class="p-info">
-                <h3>The Guardian Stack</h3>
-                <p>Set triplu din Ochi de Tigru, Lapis Lazuli și Lavă vulcanică.</p>
+                <div class="p-title">The Guardian Stack</div>
+                <p class="p-desc">Ochi de Tigru, Lapis Lazuli și Lavă vulcanică.</p>
                 <div class="p-price">250 RON</div>
             </div>
         </div>
+        
+        <div class="product-card">
+            <img src="https://i.ibb.co/hBw0yW0/onyx-bracelet.jpg" alt="Onyx Power Bracelet">
+            <div class="p-info">
+                <div class="p-title">Onyx Power Shield</div>
+                <p class="p-desc">Onyx negru mat pentru protecție și forță interioară.</p>
+                <div class="p-price">140 RON</div>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <img src="https://i.ibb.co/v4p0K62/rose-quartz-bracelet.jpg" alt="Rose Quartz Harmony">
+            <div class="p-info">
+                <div class="p-title">Rose Quartz Harmony</div>
+                <p class="p-desc">Cuarț roz delicat, simbol al iubirii și armoniei.</p>
+                <div class="p-price">130 RON</div>
+            </div>
+        </div>
+
     </main>
-    <section class="description-section">
-        <h2 style="color: var(--gold);">Povestea Brandului</h2>
-        <p>Fiecare piesă Elite Energy este modelată manual cu intenție. Folosim doar pietre naturale autentice, atent selecționate, pentru a crea nu doar un accesoriu, ci un simbol al forței tale interioare.</p>
-        <button class="btn-gold">Contactează-ne pentru comenzi</button>
+
+    <section class="reviews-section">
+        <h2 style="color: var(--gold);">Ce spun clienții noștri</h2>
+        <div class="review-grid">
+            <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <p>"Brățara cu panteră este superbă, detaliile sunt mult mai frumoase în realitate!"</p>
+                <cite>- Elena M.</cite>
+            </div>
+            <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <p>"Energia pietrelor de ametist se simte imediat. Recomand cu drag!"</p>
+                <cite>- Andrei V.</cite>
+            </div>
+            <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <p>"Am comandat setul Guardian Stack și sunt foarte mulțumit de calitate și livrare rapidă."</p>
+                <cite>- Marius T.</cite>
+            </div>
+        </div>
     </section>
+
+    <section class="contact-section" id="contact">
+        <div class="contact-container">
+            <h2 style="color: var(--gold);">PLASEAZĂ O COMANDĂ</h2>
+            <p style="color: #888; margin-bottom: 20px;">Lasă-ne detaliile tale și te vom contacta pentru confirmare.</p>
+            <form action="https://formspree.io/f/codul-tau" method="POST">
+                <input type="text" name="nume" placeholder="Numele tău" required>
+                <input type="email" name="email" placeholder="Adresa de Email" required>
+                <input type="text" name="model_dorit" placeholder="Modelul dorit (ex: Silver Panther)">
+                <textarea name="mesaj" rows="4" placeholder="Mesajul tău (specifică mărimea încheieturii în cm)"></textarea>
+                <button type="submit" class="btn-gold">Trimite Comanda</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="social-links">
+            <a href="https://wa.me/407XXXXXXXX" class="whatsapp-btn" target="_blank">WhatsApp Direct</a>
+            <a href="https://instagram.com/CONTUL_TAU_INSTAGRAM" target="_blank">Instagram</a>
+            <a href="https://tiktok.com/@CONTUL_TAU_TIKTOK" target="_blank">TikTok</a>
+        </div>
+        <p style="color: #555; font-size: 0.8rem; margin-top: 20px;">&copy; 2024 Elite Energy Art. Toate drepturile rezervate.</p>
+    </footer>
+
 </body>
 </html>
