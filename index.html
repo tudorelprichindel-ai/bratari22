@@ -6,36 +6,68 @@
     <title>Elite Energy - Brățări Premium</title>
     <style>
         :root { --gold: #c5a059; --bg: #0d0d0d; --gold-t: #e5c100; }
-        body { margin: 0; font-family: 'Times New Roman', serif; background: var(--bg); color: #fff; line-height: 1.6; }
+        body { margin: 0; font-family: serif; background: var(--bg); color: #fff; line-height: 1.6; }
         nav { text-align: center; padding: 20px; background: #000; border-bottom: 1px solid #222; position: sticky; top: 0; z-index: 100; }
         .logo { font-weight: bold; color: var(--gold-t); font-size: 1.4rem; letter-spacing: 2px; }
-        header { text-align: center; padding: 60px 20px; background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://i.ibb.co/hK7Y7Cj/2636.jpg'); background-size: cover; background-position: center; }
+        header { text-align: center; padding: 60px 20px; background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1611591437281-460bfbe1220a?auto=format&fit=crop&q=80&w=1000'); background-size: cover; background-position: center; }
         .catalog { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; padding: 20px; max-width: 1200px; margin: 0 auto; }
-        .card { background: #1a1a1a; border: 1px solid #333; text-align: center; padding-bottom: 20px; transition: 0.3s; }
+        .card { background: #1a1a1a; border: 1px solid #333; text-align: center; padding-bottom: 20px; border-radius: 8px; overflow: hidden; }
         .card img { width: 100%; height: 320px; object-fit: cover; }
         .p-title { font-size: 1.2rem; color: var(--gold); margin: 15px 0 5px; }
         .p-price { color: var(--gold-t); font-size: 1.3rem; font-weight: bold; }
         .reviews { padding: 40px 20px; background: #111; text-align: center; }
-        .rev-card { background: #000; padding: 20px; margin: 10px auto; max-width: 500px; border-left: 3px solid var(--gold); font-style: italic; }
+        .rev-card { background: #000; padding: 20px; margin: 10px auto; max-width: 500px; border-left: 3px solid var(--gold); font-style: italic; text-align: left; }
         .contact { padding: 40px 20px; text-align: center; }
         input, textarea { width: 90%; max-width: 400px; padding: 12px; margin: 8px 0; background: #1a1a1a; border: 1px solid #333; color: #fff; border-radius: 4px; }
-        .btn { background: var(--gold); color: #000; border: none; padding: 15px 30px; font-weight: bold; cursor: pointer; text-transform: uppercase; width: 90%; max-width: 425px; }
+        .btn { background: var(--gold); color: #000; border: none; padding: 15px 30px; font-weight: bold; cursor: pointer; text-transform: uppercase; width: 90%; max-width: 425px; border-radius: 4px; }
         footer { padding: 30px; background: #000; border-top: 1px solid #222; text-align: center; }
-        .social a { color: var(--gold); text-decoration: none; margin: 0 10px; border: 1px solid var(--gold); padding: 8px 15px; display: inline-block; margin-top: 10px; }
+        .social a { color: var(--gold); text-decoration: none; margin: 0 10px; border: 1px solid var(--gold); padding: 8px 15px; display: inline-block; margin-top: 10px; border-radius: 4px; }
     </style>
 </head>
 <body>
     <nav><div class="logo">ELITE ENERGY ART</div></nav>
-    <header><h1>COLECȚIA HANDMADE</h1><p>Pietre naturale autentice</p></header>
+    <header><h1>COLECȚIA HANDMADE</h1><p>Echilibru și putere prin cristale naturale</p></header>
+    
     <main class="catalog">
-        <div class="card"><img src="https://i.ibb.co/XLYmR90/2637.jpg"><h3>Silver Panther Clarity</h3><div class="p-price">180 RON</div></div>
-        <div class="card"><img src="https://i.ibb.co/hK7Y7Cj/2636.jpg"><h3>Royal Amethyst Luxe</h3><div class="p-price">165 RON</div></div>
-        <div class="card"><img src="https://i.ibb.co/W2fVfXW/2580.jpg"><h3>The Guardian Stack</h3><div class="p-price">250 RON</div></div>
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&q=80&w=600" alt="Silver Panther">
+            <h3 class="p-title">Silver Panther Clarity</h3>
+            <div class="p-price">180 RON</div>
+        </div>
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&q=80&w=600" alt="Royal Amethyst">
+            <h3 class="p-title">Royal Amethyst Luxe</h3>
+            <div class="p-price">165 RON</div>
+        </div>
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1602810318383-e3c6c313ca61?auto=format&fit=crop&q=80&w=600" alt="Guardian Stack">
+            <h3 class="p-title">The Guardian Stack</h3>
+            <div class="p-price">250 RON</div>
+        </div>
     </main>
+
     <section class="reviews">
-        <h2>Recenzii Clienți</h2>
-        <div class="rev-card">"Calitate excepțională, brățara cu panteră este superbă!" - Elena M.</div>
-        <div class="rev-card">"Energia pietrelor se simte imediat. Recomand!" - Andrei V.</div>
+        <h2 style="color: var(--gold);">Recenzii Clienți</h2>
+        <div class="rev-card">"Calitate excepțională, brățara cu panteră este superbă în realitate!" - Elena M.</div>
+        <div class="rev-card">"Energia pietrelor se simte imediat. Recomand cu încredere!" - Andrei V.</div>
     </section>
+
     <section class="contact">
-        <h2>Com
+        <h2 style="color: var(--gold);">Comandă Rapidă</h2>
+        <form action="#" method="POST">
+            <input type="text" placeholder="Numele tău" required>
+            <input type="text" placeholder="Telefon" required>
+            <textarea rows="3" placeholder="Model dorit și mărime încheietură..."></textarea>
+            <button class="btn">Trimite Solicitarea</button>
+        </form>
+    </section>
+
+    <footer>
+        <div class="social">
+            <a href="https://wa.me/407XXXXXXXX">WhatsApp</a>
+            <a href="#">Instagram</a>
+        </div>
+        <p style="font-size: 0.8rem; color: #444; margin-top: 20px;">&copy; 2026 Elite Energy Art. Crafted with passion.</p>
+    </footer>
+</body>
+</html>
