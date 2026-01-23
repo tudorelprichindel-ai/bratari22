@@ -1,140 +1,39 @@
 <!DOCTYPE html>
-<html lang="ro">
+<html lang="ro" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Elite Energy Art | Energie și Frumos</title>
+    <title>ZenBracelets | Energie și Stil</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
-        /* Stiluri Generale */
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; line-height: 1.6; color: #333; background-color: #fff; }
-        
-        /* Navigație */
-        nav { background: #000; color: #fff; padding: 1rem; text-align: center; position: sticky; top: 0; z-index: 1000; }
-        nav h1 { font-size: 1.5rem; letter-spacing: 3px; text-transform: uppercase; }
-
-        /* Secțiune Hero */
-        .hero { 
-            height: 60vh; 
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?auto=format&fit=crop&w=1000&q=80'); 
-            background-size: cover; 
-            background-position: center; 
-            display: flex; 
-            flex-direction: column; 
-            justify-content: center; 
-            align-items: center; 
-            color: #fff; 
-            text-align: center; 
-            padding: 20px;
-        }
-        .hero h2 { font-size: 2.5rem; margin-bottom: 10px; }
-        .hero p { font-size: 1.2rem; max-width: 600px; }
-
-        /* Galerie Produse */
-        .container { max-width: 1100px; margin: 40px auto; padding: 20px; }
-        .section-title { text-align: center; margin-bottom: 40px; text-transform: uppercase; letter-spacing: 2px; }
-        
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-        .card { border: 1px solid #eee; border-radius: 8px; overflow: hidden; transition: transform 0.3s; }
-        .card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
-        .card img { width: 100%; height: 250px; object-fit: cover; }
-        .card-content { padding: 20px; text-align: center; }
-        .card-content h3 { margin-bottom: 10px; }
-
-        /* Formular de Comandă */
-        .order-section { background: #f4f4f4; padding: 60px 20px; border-radius: 20px; margin-top: 40px; }
-        form { max-width: 500px; margin: 0 auto; display: flex; flex-direction: column; gap: 15px; }
-        label { font-weight: bold; font-size: 0.9rem; }
-        input, select, textarea { 
-            width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 5px; font-size: 16px; 
-        }
-        button { 
-            background: #000; color: #fff; padding: 15px; border: none; border-radius: 5px; 
-            font-weight: bold; cursor: pointer; text-transform: uppercase; margin-top: 10px;
-        }
-        button:hover { background: #333; }
-
-        /* Footer */
-        footer { text-align: center; padding: 40px 20px; font-size: 0.9rem; color: #777; border-top: 1px solid #eee; }
-
-        /* Responsivitate pentru Mobil */
-        @media (max-width: 600px) {
-            .hero h2 { font-size: 1.8rem; }
-            .container { padding: 15px; }
-        }
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;600&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3, .serif { font-family: 'Playfair Display', serif; }
     </style>
 </head>
-<body>
+<body class="bg-[#faf9f6] text-stone-800">
 
-<nav>
-    <h1>Elite Energy Art</h1>
-</nav>
-
-<section class="hero">
-    <h2>Energie Pozitivă în Artă</h2>
-    <p>Descoperă colecția noastră de tablouri și sculpturi create pentru a armoniza spațiul tău.</p>
-</section>
-
-<div class="container">
-    <h2 class="section-title">Colecția Noastră</h2>
-    <div class="grid">
-        <div class="card">
-            <img src="https://images.unsplash.com/photo-1541963463532-d68292c34b19?auto=format&fit=crop&w=500&q=80" alt="Tablou Energie">
-            <div class="card-content">
-                <h3>Tablou "Flux Vital"</h3>
-                <p>Ulei pe pânză, 60x80cm</p>
+    <nav class="fixed w-full z-50 bg-white/80 backdrop-blur-md border-b border-stone-100">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <h1 class="text-2xl font-bold tracking-tighter uppercase">ZenBracelets</h1>
+            <div class="hidden md:flex space-x-8 text-sm uppercase tracking-widest font-semibold">
+                <a href="#shop" class="hover:text-amber-700 transition">Magazin</a>
+                <a href="#beneficii" class="hover:text-amber-700 transition">Beneficii</a>
+                <a href="#contact" class="hover:text-amber-700 transition">Contact</a>
             </div>
+            <button onclick="toggleCart()" class="relative p-2">
+                <i class="fa-solid fa-cart-shopping text-xl"></i>
+                <span id="cart-count" class="absolute top-0 right-0 bg-amber-700 text-white text-[10px] rounded-full h-4 w-4 flex items-center justify-center">0</span>
+            </button>
         </div>
-        <div class="card">
-            <img src="https://images.unsplash.com/photo-1549490349-8643362247b5?auto=format&fit=crop&w=500&q=80" alt="Sculptură">
-            <div class="card-content">
-                <h3>Sculptură "Echilibru"</h3>
-                <p>Materiale mixte, ediție limitată</p>
-            </div>
+    </nav>
+
+    <section class="relative h-screen flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1615484477778-ca3b77940c25?auto=format&fit=crop&q=80&w=1920" class="w-full h-full object-cover opacity-40" alt="Bratari fundal">
         </div>
-        <div class="card">
-            <img src="https://images.unsplash.com/photo-1578301978693-85fa9c0320b9?auto=format&fit=crop&w=500&q=80" alt="Artă Modernă">
-            <div class="card-content">
-                <h3>Tablou "Zen"</h3>
-                <p>Acrilic cu inserții aurii</p>
-            </div>
-        </div>
-    </div>
-
-    <div class="order-section" id="comanda">
-        <h2 class="section-title">Plasează o Comandă</h2>
-        <p style="text-align: center; margin-bottom: 30px;">Completează datele de mai jos și echipa noastră te va contacta.</p>
-        
-        <form action="https://formspree.io/f/MĂ_VEI_ÎNLOCUI_AICI" method="POST">
-            <label>Nume Complet</label>
-            <input type="text" name="nume" placeholder="Numele tău..." required>
-
-            <label>Email</label>
-            <input type="email" name="email" placeholder="adresa@email.com" required>
-
-            <label>Telefon</label>
-            <input type="tel" name="telefon" placeholder="07xx xxx xxx" required>
-
-            <label>Produs dorit</label>
-            <select name="produs">
-                <option value="Flux Vital">Tablou Flux Vital</option>
-                <option value="Echilibru">Sculptură Echilibru</option>
-                <option value="Zen">Tablou Zen</option>
-                <option value="Personalizat">Comandă Personalizată</option>
-            </select>
-
-            <label>Mesaj / Preferințe</label>
-            <textarea name="mesaj" rows="4" placeholder="Detalii despre comandă..."></textarea>
-
-            <button type="submit">Trimite Comanda</button>
-        </form>
-    </div>
-</div>
-
-<footer>
-    <p>© 2026 Elite Energy Art. Toate drepturile rezervate.</p>
-    <p>Creat cu pasiune pentru frumos și energie pozitivă.</p>
-</footer>
-
-</body>
-</html>
+        <div class="relative z-10 text-center px-4">
+            <span class="uppercase tracking-[0.3em] text-sm mb-4 block animate-fade-in text-amber-800 font-semibold">Colecția de Echilibru 2026</span>
+            <h2 class="text-5xl md:text-7xl mb-6">Energia pământului, <br><span class="italic">pe pielea ta.</span></h2>
+            <p class="text-
